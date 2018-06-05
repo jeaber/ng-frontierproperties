@@ -1,0 +1,40 @@
+<div class="plans">
+	<section id="plans" class="inner-container">
+		<h2>Floor Plans and Pricing</h2>
+	</section>
+	<section class='inner-container'>
+		<p style="margin-top: 0;background-color:transparent">{{ ( data | async)?.rooms?.subtext}}</p>
+		<div class="plan">
+			<div class="info">
+				<div class="info-text">
+					<h3>2 Bed/1 Bath</h3>
+					<span>({{ ( data | async)?.rooms?.single?.sqft}} sqft)</span>
+					<ul class="list">
+						<li *ngFor="let listing of singleListings | async">
+							{{ listing.text }}
+						</li>
+					</ul>
+				</div>
+				<div class="image">
+					<img (click)="isActive($event)" src="/assets/img/mora/layout.png">
+				</div>
+			</div>
+		</div>
+		<div class="plan">
+			<div class="info">
+				<div class="info-text">
+					<h3>2 Bed/1 Bath</h3>
+					<span>({{ ( data | async)?.rooms.double?.sqft}} sqft)</span>
+					<ul class="list">
+						<li *ngFor="let listing of doubleListings | async">
+							{{ listing.text }}
+						</li>
+					</ul>
+				</div>
+				<div class="image">
+					<img (click)="isActive($event)" src="/assets/img/mora/layout.png">
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

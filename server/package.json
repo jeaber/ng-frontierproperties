@@ -1,0 +1,28 @@
+{
+  "name": "frontierpropertiesmn.com",
+  "version": "0.0.0",
+  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
+  "author": "Patrick Stapleton <patrick@angularclass.com>",
+  "homepage": "https://github.com/angularclass/angular2-webpack-starter",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.6.1",
+    "express": "^4.13.4",
+    "http": "0.0.0",
+    "nodemailer": "^2.1.0",
+    "nodemailer-mailgun-transport": "^1.0.1",
+    "path": "^0.12.7",
+    "socket.io": "^1.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+  },
+  "engines": {
+    "node": ">= 4.2.1 <= 5",
+    "npm": ">= 3"
+  }
+}

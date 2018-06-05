@@ -1,0 +1,56 @@
+input {
+  width: 100%;
+}
+.card-half {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.card-half:before,
+.card-half:after {
+  content: '';
+  display: table;
+}
+.card-half:after {
+  clear: both;
+}
+.card-half:nth-child(2n) {
+  margin-right: 0%;
+  float: right;
+}
+.card-half:nth-child(2n+1) {
+  clear: both;
+}
+ul li {
+  margin: 0.5em 0;
+}
+ul li input {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+ul li input:before,
+ul li input:after {
+  content: '';
+  display: table;
+}
+ul li input:after {
+  clear: both;
+}
+ul li input:last-child {
+  margin-right: 0%;
+}
+ul li button {
+  float: right;
+}
+.selected {
+  background-color: lightgreen;
+}

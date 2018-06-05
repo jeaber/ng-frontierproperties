@@ -1,0 +1,195 @@
+ul {
+  margin: 0;
+}
+#plans {
+  background-color: transparent;
+  padding-top: 1em;
+}
+.plans {
+  margin: 1em 0;
+  background-color: #d2b48c;
+  height: auto;
+  min-height: 15em;
+  padding-bottom: 1em;
+}
+.plans h2 {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 800px) {
+  .plans {
+    min-height: 22em;
+  }
+}
+.plan {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.plan:before,
+.plan:after {
+  content: '';
+  display: table;
+}
+.plan:after {
+  clear: both;
+}
+.plan:last-child {
+  margin-right: 0%;
+}
+.plan .list {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+  clear: both;
+}
+.plan .list:before,
+.plan .list:after {
+  content: '';
+  display: table;
+}
+.plan .list:after {
+  clear: both;
+}
+.plan .list:last-child {
+  margin-right: 0%;
+}
+.plan .info div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 74.25%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.plan .info div:before,
+.plan .info div:after {
+  content: '';
+  display: table;
+}
+.plan .info div:after {
+  clear: both;
+}
+.plan .info div:last-child {
+  margin-right: 0%;
+}
+.plan .info h3 {
+  margin: 0;
+}
+.plan .info .info-text {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 65.66666666666666%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+.plan .info .info-text:before,
+.plan .info .info-text:after {
+  content: '';
+  display: table;
+}
+.plan .info .info-text:after {
+  clear: both;
+}
+.plan .info .info-text:last-child {
+  margin-right: 0%;
+}
+.plan .info .info-text span {
+  font-size: 0.9em;
+  color: #696969;
+}
+.plan .info .image {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  overflow: visible;
+  float: right !important;
+}
+.plan .info .image:before,
+.plan .info .image:after {
+  content: '';
+  display: table;
+}
+.plan .info .image:after {
+  clear: both;
+}
+.plan .info .image:last-child {
+  margin-right: 0%;
+}
+.plan img {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin: auto;
+  display: block;
+  max-width: 6em;
+  background-color: #fff;
+  border: 0.2em ridge #006400;
+  border-radius: 3px;
+  padding: 0.2em;
+  transition: all 1s ease;
+}
+.plan img:before,
+.plan img:after {
+  content: '';
+  display: table;
+}
+.plan img:after {
+  clear: both;
+}
+.plan img:last-child {
+  margin-right: 0%;
+}
+.plan img:hover {
+  cursor: pointer;
+}
+.plan img.active {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  -ms-transform: scale(3); /* IE 9 */
+  -webkit-transform: scale(3); /* Safari */
+  transform: scale(3);
+}
+@media only screen and (max-width: 600px) {
+  .plan {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    margin-bottom: 1em;
+  }
+  .plan:before,
+  .plan:after {
+    content: '';
+    display: table;
+  }
+  .plan:after {
+    clear: both;
+  }
+  .plan:last-child {
+    margin-right: 0%;
+  }
+}

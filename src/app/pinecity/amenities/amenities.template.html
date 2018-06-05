@@ -1,0 +1,26 @@
+<section id="features" class="inner-container">
+	<h2>Amenities and Utilities</h2>
+	<p>
+		{{ (data | async)?.amenities?.paragraphOne }}
+	</p>
+	<p>
+		{{ (data | async)?.amenities?.paragraphTwo }}
+	</p>
+	<section class="utilities-list">
+		<div class="half">
+			<h3>All apartments include</h3>
+			<ul>
+				<li *ngFor="let item of listOne | async">{{ item.text }}</li>
+			</ul>
+		</div>
+		<div class="half">
+			<h3>Utilities paid for by management</h3>
+			<ul>
+				<li *ngFor="let item of listTwo | async">{{ item.text }}</li>
+			</ul>
+		</div>
+	</section>
+	<div class="boxed">
+		<div>A single detached garage stall is provided for each unit and is included in rent!</div>
+	</div>
+</section>

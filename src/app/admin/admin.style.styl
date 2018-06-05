@@ -1,0 +1,39 @@
+@import '~jeet/styl/index.styl';
+@import '~rupture/rupture/index.styl';
+
+mat-form-field
+	width 100%
+	input, textarea
+		display block
+		width 100%
+.card-half
+	column(1/2, $gutter: 1)
+	+below(3)
+		column(1)
+ul li
+	display inline-block
+	input
+		col(1/2)
+	button
+		float right
+.btn
+	display block
+	padding 0
+	width 8em
+	margin auto
+ul
+	padding: 0;
+.btn-container
+	display: inline-block;
+	width: 100%;
+	> mat-form-field
+		span(2/3)
+	> button
+		span(1/3)		
+.list-item-container
+	display: inline-block;
+	width: 100%;
+	> input
+		span(2.5/5)
+	> button,i
+		span(1/5)

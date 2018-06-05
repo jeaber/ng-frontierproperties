@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic|Alegreya");
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~jeet/styl/index.styl';
+@import '~rupture/rupture/index.styl';
+
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+}
+.font-body,
+button,
+body,
+p,
+#text-layer span,
+#text-layer-scrolling span,
+footer * {
+  font-family: Lato, serif;
+  font-weight: 400;
+}
+md-card {
+  margin: 1em auto;
+}
+.container {
+  max-width: 50em;
+  margin: auto 3%;
+  left: 0;
+  right: 0;
+  display: block;
+}
+.font-header,
+h1,
+h2,
+h3,
+h4,
+h5,
+header nav ul li,
+.btn {
+  font-family: 'Alegreya', serif;
+  font-weight: 400;
+}
+body {
+  margin: 0;
+}
+section {
+  width: 100%;
+  display: block;
+  clear: both;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+.textarea label {
+  width: 100%;
+}
+.textarea textarea {
+  width: 100%;
+  border: 2px solid #d3d3d3;
+  border-radius: 4px;
+}
+.text-layer-scrolling {
+  display: block;
+}
+@media only screen and (max-width: 600px) {
+  .text-layer-scrolling {
+    display: none;
+  }
+}
+#pets {
+  width: inherit;
+
+}
+section > div {
+  margin: auto;
+  padding-bottom: 1em;
+}
+
+.inner-container
+  width 50em
+  margin 0 auto
+  +below(5)
+    width 45em
+  +below(3)
+    width 90%
+    padding 0 5%
+.home
+  margin-top: 0;
+  div
+    h2
+      margin-top 5px
+  +below(1)
+    margin-top 0em
+iframe
+  max-width: 100%;
+.section-green
+  padding-top 5px
+  padding-bottom 5px
+header
+  overflow: hidden;
+  height 300px
+  +below(1)
+    height 25em
+#header-image
+	top: -30%;
+	height: 500px !important
+	width: 100%;
+	position absolute
+	overflow hidden
+	z-index -1
+	+below(4)
+		top -20% !important
+.plans
+	margin 1em 0
+	background-color tan
+	height auto
+	min-height 15em
+	padding-bottom: 1em
+	overflow: hidden

@@ -1,0 +1,40 @@
+<div class="plans">
+	<section id="plans" class="inner-container">
+		<h2>Floor Plans and Pricing</h2>
+	</section>
+	<section class="inner-container">
+		<p style="margin-top: 0;background-color:transparent">{{ ( data | async)?.rooms?.subtext}}</p>
+		<div class="plan">
+			<div class="info">
+				<div class="info-text">
+					<h3>1 Bed/1 Bath</h3>
+					<span>({{ ( data | async)?.rooms?.single?.sqft}} sqft)</span>
+					<ul class="list">
+						<li *ngFor="let listing of singleListings | async">
+							{{ listing.text }}
+						</li>
+					</ul>
+				</div>
+				<div class="image">
+					<img (click)="isActive($event)" src="https://firebasestorage.googleapis.com/v0/b/frontier-properties.appspot.com/o/pinecity%2Ffloorplans%2F1br.png?alt=media&token=06ab2f16-b023-4884-82e6-ba9fcccdfccf">
+				</div>
+			</div>
+		</div>
+		<div class="plan">
+			<div class="info">
+				<div class="info-text">
+					<h3>2 Bed/1 Bath</h3>
+					<span>({{ ( data | async)?.rooms.double?.sqft}} sqft)</span>
+					<ul class="list">
+						<li *ngFor="let listing of doubleListings | async">
+							{{ listing.text }}
+						</li>
+					</ul>
+				</div>
+				<div class="image">
+					<img (click)="isActive($event)" src="https://firebasestorage.googleapis.com/v0/b/frontier-properties.appspot.com/o/pinecity%2Ffloorplans%2F2br.png?alt=media&token=709d53b7-7e8b-4b1e-8fae-aca818c6a63b">
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,43 @@
+@import '~jeet/styl/index.styl';
+@import '~rupture/rupture/index.styl';
+#home {
+	background:url(https://firebasestorage.googleapis.com/v0/b/frontier-properties.appspot.com/o/pinecity%2Fpinecity-bg.png?alt=media&token=41940b36-c2af-4f78-bbd6-d69639a70a99);
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+.inner-container
+	margin-top: 3em;
+	height: 20em;
+	width: 50em;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px darkgreen;
+	border: darkgreen thick solid;
+	+below(4)
+		width: 42em;
+	+below(3)
+		width: 33em;
+	+below(2)
+		width: 25em;
+	+below(1)
+		width: 20em;
+		height: 30em;
+		button
+			margin-top 1em
+			column(1/2)
+				
+h1 {
+	font-size: 3em;
+}
+p {
+	font-size: 1.5em;
+}
+button
+	padding: 0;
+	width: 10em;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	margin: 0 1em;
+	display: inline-block;

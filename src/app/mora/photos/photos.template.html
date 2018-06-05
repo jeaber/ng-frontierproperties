@@ -1,0 +1,9 @@
+<section class="inner-container">
+<h2>Photos</h2>
+</section>
+<div id="photos" class="gallery hidden">
+	<div class="gallery-item" *ngFor="let url of active">
+		<img src="{{url}}">
+	</div>
+</div>
+<button (click)="toggleMore()" class="btn" id="photo-expand-btn">{{isMore}}</button>
