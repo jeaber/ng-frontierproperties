@@ -12,7 +12,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
     FireData
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: ['./pinecity.style.styl', './../app.component.styl'],
+  styleUrls: ['./pinecity.style.styl', './../app.component.styl', './../mora/mora.style.styl'],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './pinecity.template.html'
 })

@@ -1,6 +1,6 @@
 @import '~jeet/styl/index.styl'
 @import '~rupture/rupture/index.styl'
-#photos
+/* #photos
 	col(1)
 	margin auto 2%
 	width 96%
@@ -11,6 +11,7 @@
 		overflow hidden
 		margin-top 1em
 		border-radius 3%
+		min-height 21em
 		img
 			width 100%
 		+below(3)
@@ -20,8 +21,14 @@
 		display: none
 	+below(3)
 		.gallery-item:nth-child(n+3)
-			display none
-	
-	
-	
-			
+			display none */
+.gallery-item
+	cursor pointer
+.large
+	position: absolute;
+	max-width: 80% !important;
+	max-height: 50em !important;
+	border-radius: 3px !important;
+	margin: auto !important;
+	left: 0;
+	right: 0;

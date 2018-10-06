@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'photos',  // <home></home>
-  styleUrls: ['./photos.style.css'],
+  styleUrls: ['./photos.style.css', './../../mora/photos/photos.styl'],
   templateUrl: './photos.template.html'
 })
 export class Photos {
@@ -10,6 +10,8 @@ export class Photos {
   urls: Array<string>;
   active: Array<string>;
   isMore: string;
+  largeUrl: string;
+
   constructor() {
     const context = this;
     this.isMore = "More";

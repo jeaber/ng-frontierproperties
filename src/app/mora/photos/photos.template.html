@@ -1,8 +1,10 @@
 <section class="inner-container">
-<h2>Photos</h2>
+	<h2>Photos</h2>
 </section>
-<div id="photos" class="gallery hidden">
-	<div class="gallery-item" *ngFor="let url of active">
+<img *ngIf="largeUrl" (mouseout)="largeUrl = false" (click)="largeUrl = false" class="large" src="{{largeUrl}}">
+
+<div id="photos" class="gallery hidden" >
+	<div (click)="largeUrl = url" class="gallery-item" *ngFor="let url of active">
 		<img src="{{url}}">
 	</div>
 </div>
