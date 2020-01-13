@@ -8,7 +8,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "node server/index.js"
   },
   "private": true,
   "dependencies": {
@@ -26,8 +27,12 @@
     "angularfire2": "^5.0.0-rc.6",
     "core-js": "^2.4.1",
     "firebase": "^4.12.0",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
     "jeet": "^7.2.0",
     "ng2-scroll-to": "^1.0.7",
+    "ngx-gallery": "^5.10.0",
+    "nodemailer-mailgun-transport": "^2.0.0",
     "rupture": "^0.7.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"

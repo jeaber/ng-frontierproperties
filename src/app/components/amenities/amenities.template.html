@@ -1,10 +1,10 @@
-<section id="features" class="inner-container">
+<div id="features" class="inner-container">
 	<h2>Amenities and Utilities</h2>
 	<p>
-		{{ (data | async)?.amenities?.paragraphOne }}
+		{{ data?.amenities?.paragraphOne }}
 	</p>
 	<p>
-		{{ (data | async)?.amenities?.paragraphTwo }}
+		{{ data?.amenities?.paragraphTwo }}
 	</p>
 	<section class="utilities-list">
 		<div class="half">
@@ -20,7 +20,4 @@
 			</ul>
 		</div>
 	</section>
-	<div class="boxed">
-		<div>A single detached garage stall is provided for each unit and is included in rent!</div>
-	</div>
-</section>
+</div>

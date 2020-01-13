@@ -1,14 +1,14 @@
 <div class="plans">
-	<section id="plans" class="inner-container">
+	<div id="plans" class="inner-container">
 		<h2>Floor Plans and Pricing</h2>
-	</section>
-	<section class='inner-container'>
-		<p style="margin-top: 0;background-color:transparent">{{ ( data | async)?.rooms?.subtext}}</p>
+	</div>
+	<div class='inner-container'>
+		<p style="margin-top: 0;background-color:transparent">{{ data.rooms?.subtext}}</p>
 		<div class="plan">
 			<div class="info">
 				<div class="info-text">
 					<h3>2 Bed/1 Bath</h3>
-					<span>({{ ( data | async)?.rooms?.single?.sqft}} sqft)</span>
+					<span>({{ data.rooms?.single?.sqft}} sqft)</span>
 					<ul class="list">
 						<li *ngFor="let listing of singleListings | async">
 							{{ listing.text }}
@@ -24,7 +24,7 @@
 			<div class="info">
 				<div class="info-text">
 					<h3>2 Bed/1 Bath</h3>
-					<span>({{ ( data | async)?.rooms.double?.sqft}} sqft)</span>
+					<span>({{ data.rooms?.double?.sqft}} sqft)</span>
 					<ul class="list">
 						<li *ngFor="let listing of doubleListings | async">
 							{{ listing.text }}
@@ -36,5 +36,5 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 </div>

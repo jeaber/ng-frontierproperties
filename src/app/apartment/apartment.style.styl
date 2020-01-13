@@ -1,5 +1,12 @@
-@import '~jeet/styl/index.styl'
-@import '~rupture/rupture/index.styl'
+@import '~jeet/styl/index.styl';
+@import '~rupture/rupture/index.styl';
+
+.mobile-half
+	column(1/2)
+	+below(3)
+		column(1)
+#text-layer-scrolling
+	z-index: 99999;
 iframe
 	margin 0 auto
 	display block
@@ -15,6 +22,8 @@ iframe
 	z-index -2
 	position absolute
 	top 0
+	max-height 25em
+	overflow hidden
 	img
 		display inline-block
 		span(1/3)

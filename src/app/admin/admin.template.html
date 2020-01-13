@@ -3,139 +3,164 @@
 		<button class="btn" mat-raised-button *ngIf="!uid" (click)="login()">Login</button>
 		<button class="btn" mat-raised-button *ngIf="uid" (click)="logout()">Logout</button>
 	</div>
-	<div *ngIf="uid" id="button-group" style="display:inline-block">
-		<button class="btn" mat-button (click)="loadPinecity()">Pine City</button>
-		<button class="btn" mat-button (click)="loadMora()">Mora</button>
-	</div>
-	<form *ngIf="uid" (ngSubmit)="onSave()" #adminForm="ngForm">
-		<h1>{{cityString()}}</h1>
-		<mat-card>
-			<h2>General Texts</h2>
-			<div class="textarea">
-				<label for="name">Welcome Text</label>
-				<mat-form-field>
-					<textarea matInput [(ngModel)]="form.welcomeText" name="welcomeText" id="name" rows="5" cols=""></textarea>
-				</mat-form-field>
-			</div>
-			<div class="textarea">
-				<label for="neighborhoodText">Neighborhood and Directions</label>
-				<mat-form-field>
-					<textarea matInput [(ngModel)]="form.neighborhoodText" name="neighborhoodText" id="neighborhoodText" rows="5" cols=""></textarea>
-				</mat-form-field>
-			</div>
-		</mat-card>
-		<mat-card>
-			<h2>Amenities</h2>
-			<form class="example-form">
-				<mat-form-field>
-					<input matInput [(ngModel)]="form.amenities.paragraphOne" placeholder="Paragraph One" name="amenitiesOne">
-				</mat-form-field>
-				<mat-form-field>
-					<input matInput [(ngModel)]="form.amenities.paragraphTwo" placeholder="Paragraph Two" name="amenitiesTwo">
-				</mat-form-field>
-			</form>
-		</mat-card>
-
-		<mat-card>
-			<h2>Availability</h2>
-			<mat-form-field>
-				<input matInput [(ngModel)]="form.rooms.subtext" placeholder="Rooms subtext" name="aSubtext">
-			</mat-form-field>
-			<mat-form-field>
-				<span md-suffix>sqft</span>
-				<input matInput [(ngModel)]="form.rooms.single.sqft" name="aSsqft" placeholder="1/1 sqft">
-			</mat-form-field>
-			<mat-form-field>
-				<span mat-suffix>sqft</span>
-				<input matInput [(ngModel)]="form.rooms.double.sqft" name="aDsqft " placeholder="2/1 sqft ">
-			</mat-form-field>
-			<button class="btn" mat-raised-button type="submit" [disabled]="!data" style="display: block;margin:auto;">Save</button>
-
-		</mat-card>
-
-	</form>
-
-
 	<div *ngIf="uid">
-		<div class="card-half">
+		<div id="button-group" style="display:inline-block">
+			<button class="btn" mat-button (click)="loadPinecity()">Pine City</button>
+			<button class="btn" mat-button (click)="loadMora()">Mora</button>
+		</div>
+
+		<form (ngSubmit)="onSave()" #adminForm="ngForm">
+			<h1>{{cityString()}}</h1>
 			<mat-card>
-				<h1>{{cityString()}}</h1>
-				<h3>Availability lists</h3>
-				<div>
-					<h4>Single</h4>
-					<ul>
-						<li class="list-item-container" *ngFor="let item of singleListings">
-							<input type="text" #updatetext [value]="item.text" />
-							<button (click)="slref.update(item.key, { text: updatetext.value })">Update</button>
-							<button (click)="slref.remove(item.key)">Delete</button>
-						</li>
-					</ul>
-					<div class="btn-container">
-						<mat-form-field>
-							<input matInput #single [(ngModel)]="pushSingle" placeholder="Add single room">
-						</mat-form-field>
-						<button class="btn" [disabled]="!single" (click)="slref.push({ text: pushSingle})">Add</button>
-					</div>
+				<h2>General Texts</h2>
+				<div class="textarea">
+					<label for="name">Welcome Text</label>
+					<mat-form-field>
+						<textarea matInput [(ngModel)]="form.welcomeText" name="welcomeText" id="name" rows="5" cols=""></textarea>
+					</mat-form-field>
 				</div>
-
-				<div>
-					<h4>Double</h4>
-					<ul>
-						<li class="list-item-container" *ngFor="let item of doubleListings">
-							<input type="text" #updatetext [value]="item.text" />
-							<button (click)="dlref.update(item.key, { text: updatetext.value })">Update</button>
-							<button (click)="dlref.remove(item.key)">Delete</button>
-						</li>
-					</ul>
-					<div class="btn-container">
-						<mat-form-field>
-							<input matInput #double [(ngModel)]="pushDouble" [ngModelOptions]="{standalone: true}" placeholder="Add double room">
-						</mat-form-field>
-						<button class="btn" [disabled]="!double" (click)="dlref.push({ text: pushDouble})">Add</button>
-					</div>
-
+				<div class="textarea">
+					<label for="neighborhoodText">Neighborhood and Directions</label>
+					<mat-form-field>
+						<textarea matInput [(ngModel)]="form.neighborhoodText" name="neighborhoodText" id="neighborhoodText"
+							rows="5" cols=""></textarea>
+					</mat-form-field>
 				</div>
 			</mat-card>
-		</div>
-		<div class="card-half">
+			<mat-card>
+				<h2>Amenities</h2>
+				<form class="example-form">
+					<mat-form-field>
+						<input matInput [(ngModel)]="form.amenities.paragraphOne" placeholder="Paragraph One" name="amenitiesOne">
+					</mat-form-field>
+					<mat-form-field>
+						<input matInput [(ngModel)]="form.amenities.paragraphTwo" placeholder="Paragraph Two" name="amenitiesTwo">
+					</mat-form-field>
+				</form>
+			</mat-card>
 
 			<mat-card>
-				<h1>{{cityString()}}</h1>
-				<h3>Amenities lists</h3>
-				<div>
-					<h4>List One</h4>
-					<ul>
-						<li class="list-item-container" *ngFor="let item of listOne">
-							<input type="text" #updatetext [value]="item.text" />
-							<button (click)="listOneref.update(item.key, { text: updatetext.value })">Update</button>
-							<button (click)="listOneref.remove(item.key)">Delete</button>
-						</li>
-					</ul>
-					<div class="btn-container">
-						<mat-form-field>
-							<input matInput #listOnea placeholder="Add item">
-						</mat-form-field>
-						<button class="btn" [disabled]="!listOnea" (click)="listOneref.push({ text: listOnea.value})">Add</button>
-					</div>
-				</div>
+				<h2>Availability</h2>
+				<mat-form-field>
+					<input matInput [(ngModel)]="form.rooms.subtext" placeholder="Rooms subtext" name="aSubtext">
+				</mat-form-field>
+				<mat-form-field>
+					<span md-suffix>sqft</span>
+					<input matInput [(ngModel)]="form.rooms.single.sqft" name="aSsqft" placeholder="1/1 sqft">
+				</mat-form-field>
+				<mat-form-field>
+					<span mat-suffix>sqft</span>
+					<input matInput [(ngModel)]="form.rooms.double.sqft" name="aDsqft " placeholder="2/1 sqft ">
+				</mat-form-field>
+				<button class="btn" mat-raised-button type="submit" [disabled]="!data"
+					style="display: block;margin:auto;">Save</button>
 
-				<div>
-					<h4>List Two</h4>
-					<ul>
-						<li class="list-item-container" *ngFor="let item of listTwo">
-							<input type="text" #updatetext [value]="item.text" />
-							<button (click)="listTworef.update(item.key, { text: updatetext.value })">Update</button>
-							<button (click)="listTworef.remove(item.key)">Delete</button>
-						</li>
-					</ul>
-					<div class="btn-container">
-						<mat-form-field>
-							<input matInput #listTwoa placeholder="Add item">
-						</mat-form-field>
-						<button class="btn" [disabled]="!listTwoa" (click)="listTworef.push({ text: listTwoa.value})">Add</button>
-					</div>
-				</div>
 			</mat-card>
+
+		</form>
+		<div style="height: auto;position: relative;overflow: hidden;">
+			<div class="card-half">
+				<mat-card>
+					<h1>{{cityString()}}</h1>
+					<h3>Availability lists</h3>
+					<div>
+						<h4>Single</h4>
+						<ul>
+							<li class="list-item-container" *ngFor="let item of singleListings">
+								<input type="text" #updatetext [value]="item.text" />
+								<button (click)="slref.update(item.key, { text: updatetext.value })">Update</button>
+								<button (click)="slref.remove(item.key)">Delete</button>
+							</li>
+						</ul>
+						<div class="btn-container">
+							<mat-form-field>
+								<input matInput #single [(ngModel)]="pushSingle" placeholder="Add single room">
+							</mat-form-field>
+							<button class="btn" [disabled]="!single" (click)="slref.push({ text: pushSingle})">Add</button>
+						</div>
+					</div>
+
+					<div>
+						<h4>Double</h4>
+						<ul>
+							<li class="list-item-container" *ngFor="let item of doubleListings">
+								<input type="text" #updatetext [value]="item.text" />
+								<button (click)="dlref.update(item.key, { text: updatetext.value })">Update</button>
+								<button (click)="dlref.remove(item.key)">Delete</button>
+							</li>
+						</ul>
+						<div class="btn-container">
+							<mat-form-field>
+								<input matInput #double [(ngModel)]="pushDouble" [ngModelOptions]="{standalone: true}"
+									placeholder="Add double room">
+							</mat-form-field>
+							<button class="btn" [disabled]="!double" (click)="dlref.push({ text: pushDouble})">Add</button>
+						</div>
+
+					</div>
+				</mat-card>
+			</div>
+
+			<div class="card-half">
+				<mat-card>
+					<h1>{{cityString()}}</h1>
+					<h3>Amenities lists</h3>
+					<div>
+						<h4>List One</h4>
+						<ul>
+							<li class="list-item-container" *ngFor="let item of listOne">
+								<input type="text" #updatetext [value]="item.text" />
+								<button (click)="listOneref.update(item.key, { text: updatetext.value })">Update</button>
+								<button (click)="listOneref.remove(item.key)">Delete</button>
+							</li>
+						</ul>
+						<div class="btn-container">
+							<mat-form-field>
+								<input matInput #listOnea placeholder="Add item">
+							</mat-form-field>
+							<button class="btn" [disabled]="!listOnea" (click)="listOneref.push({ text: listOnea.value})">Add</button>
+						</div>
+					</div>
+
+					<div>
+						<h4>List Two</h4>
+						<ul>
+							<li class="list-item-container" *ngFor="let item of listTwo">
+								<input type="text" #updatetextt [value]="item.text" />
+								<button (click)="listTworef.update(item.key, { text: updatetextt.value })">Update</button>
+								<button (click)="listTworef.remove(item.key)">Delete</button>
+							</li>
+						</ul>
+						<div class="btn-container">
+							<mat-form-field>
+								<input matInput #listTwoa placeholder="Add item">
+							</mat-form-field>
+							<button class="btn" [disabled]="!listTwoa" (click)="listTworef.push({ text: listTwoa.value})">Add</button>
+						</div>
+					</div>
+				</mat-card>
+			</div>
 		</div>
+		<mat-card>
+			<h2>Photo URLs {{cityString()}}</h2>
+			<p>Upload images to image hosting website and add the http:// with .jpg or .png</p>
+			<div>
+				<ul>
+					<li class="list-item-container" *ngFor="let item of photosList">
+						<input type="text" #imageUrlupdate [value]="item.url" />
+						<button (click)="photourlsRef.update(item.key, { url: imageUrlupdate.value })">Update</button>
+						<button (click)="photourlsRef.remove(item.key)">Delete</button>
+					</li>
+				</ul>
+				<div class="btn-container">
+					<mat-form-field>
+						<input matInput #imageUrl placeholder="Add Url">
+					</mat-form-field>
+					<button class="btn" [disabled]="!imageUrl" (click)="photourlsRef.push({ url: imageUrl.value})">Add</button>
+				</div>
+			</div>
+		</mat-card>
+
 	</div>
+
 </section>

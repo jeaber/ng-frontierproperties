@@ -1,0 +1,120 @@
+<div *ngIf="data$ | async as data">
+	<header>
+		<section id="text-layer" class="text-layer inner-container" style="max-width: 50em;margin:auto;">
+
+			<h1 style="font-size:2em">
+				{{apartmentdata.title}}
+				<span>(320) 300-0606</span>
+				<p class="subtitle">{{apartmentdata.address}}</p>
+			</h1>
+
+			<nav>
+				<ul>
+					<li>
+						<a scrollTo href="#plans">Apartments + Pricing</a>
+					</li>
+					<li>
+						<a scrollTo href="#features">Features</a>
+					</li>
+					<li>
+						<a scrollTo href="#photos">Photos</a>
+					</li>
+					<li>
+						<a scrollTo href="#contact">Contact</a>
+					</li>
+					<li>
+						<a href="https://cozy.co/">Pay rent</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<div id="text-layer-scrolling">
+			<div style="margin: auto 3%;height: 4em">
+				<h1>
+					{{apartmentdata.title}}
+					<br>
+					<span>(320) 300-0606</span>
+				</h1>
+				<nav>
+					<ul>
+						<li>
+							<a scrollTo href="#plans">Apartments + Pricing</a>
+						</li>
+						<li>
+							<a scrollTo href="#features">Features</a>
+						</li>
+						<li>
+							<a scrollTo href="#photos">Photos</a>
+						</li>
+						<li>
+							<a scrollTo href="#contact">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="white-layer"></div>
+		<div class="images">
+			<img [src]="apartmentdata.photoUrls[0]" />
+			<img [src]="apartmentdata.photoUrls[1]" />
+			<img [src]="apartmentdata.photoUrls[2]" />
+		</div>
+	</header>
+
+	<section class="home section-green">
+		<div class="inner-container">
+			<h2>Welcome!</h2>
+			<p>
+				{{ data.welcomeText }}
+			</p>
+		</div>
+	</section>
+
+	<section>
+		<div class="neighborhood" class="inner-container">
+			<h2>Neighborhood Information and Directions</h2>
+			<p>
+				{{ data.neighborhoodText }}
+			</p>
+			<iframe width="600" height="450" frameborder="0" style="border:0" [src]="getCleanUrl(apartmentdata.googleMapsUrl)"
+				allowfullscreen></iframe>
+		</div>
+	</section>
+
+	<app-amenities [city]='city' [data]="data"></app-amenities>
+	<app-availability [city]='city' [data]="data"></app-availability>
+	<app-photos [city]='city' [photoUrls]="data.photoUrls"></app-photos>
+
+	<section id="pets" class="section-pets section-green">
+		<div class="inner-container">
+			<h2>Pet Policy</h2>
+			<p>
+				{{apartmentdata.name}} is a cat friendly establishment. ( 2 cats per bedroom max &amp; no dogs )
+			</p>
+			<p>
+				There is a $25 per month pet fee, no upfront costs or pet deposits.
+			</p>
+			<p>
+				Service animals are welcome.
+			</p>
+		</div>
+	</section>
+
+	<!--<contact></contact>-->
+	<section id="contact">
+		<div class="inner-container">
+			<h3>Application and Contact</h3>
+			<p>
+				There is a $60 background-check fee per tenant (if an application doesn't reach the background check process,
+				this
+				fee will
+				be refunded.) All residents are screened before their tenancy begins, ensuring safe and comfortable living
+				arrangements
+				for all. Please call or check our website for availability.
+			</p>
+
+			<h2 style="text-align:center">Call today to schedule a showing or apply at (320) 300-0606</h2>
+		</div>
+	</section>
+</div>

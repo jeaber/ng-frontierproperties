@@ -1,0 +1,21 @@
+@import '~jeet/styl/index.styl'
+@import '~rupture/rupture/index.styl'
+
+:host
+	max-width: 80em;
+	display: block;
+	margin: auto;
+
+.gallery-item
+	cursor pointer
+	img
+		+below(1)
+			min-height 0 !important
+.large
+	position: absolute;
+	max-width: 80% !important;
+	max-height: 50em !important;
+	border-radius: 3px !important;
+	margin: auto !important;
+	left: 0;
+	right: 0;
